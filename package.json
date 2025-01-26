@@ -20,6 +20,7 @@
     "@types/node": "22.10.10",
     "cross-env": "7.0.3",
     "husky": "9.1.7",
+    "kill-port": "2.0.1",
     "servor": "4.0.2"
   }
 }
