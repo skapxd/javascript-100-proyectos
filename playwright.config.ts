@@ -23,6 +23,12 @@ const fullScreamOptions = (() => {
   };
 })();
 
+const snapshotPathTemplate = (() => {
+  const folder = process.env.CI ? "ci" : "dev";
+
+  return `{testDir}/{testFileDir}/{testFileName}-snapshots/${folder}/{arg}-{projectName}{ext}`;
+})();
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -39,9 +45,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: "html",
-  snapshotPathTemplate: process.env.CI
-    ? "{testDir}/{testFileDir}/{testFileName}-snapshots/ci/{arg}-{projectName}{ext}"
-    : "{testDir}/{testFileDir}/{testFileName}-snapshots/dev/{arg}-{projectName}{ext}",
+  snapshotPathTemplate,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: "http://localhost:8080",
