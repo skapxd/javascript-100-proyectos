@@ -24,7 +24,9 @@ test("01-tinder-swipe", async ({ page }) => {
     for (let i = 0; i < 400; i++) {
       await page.mouse.move(centroX + i, centroY);
       if (i % 15 === 0) {
-        await expect(page).toHaveScreenshot(`swipe-right-${i / 15}.png`);
+        await expect(page).toHaveScreenshot(`swipe-right-${i / 15}.png`, {
+          mask: [page.locator("h2")],
+        });
       }
     }
     await page.mouse.up();
@@ -52,7 +54,9 @@ test("01-tinder-swipe", async ({ page }) => {
     for (let i = 0; i < 400; i++) {
       await page.mouse.move(centroX - i, centroY);
       if (i % 15 === 0) {
-        await expect(page).toHaveScreenshot(`swipe-left-${i / 15}.png`);
+        await expect(page).toHaveScreenshot(`swipe-left-${i / 15}.png`, {
+          mask: [page.locator("h2")],
+        });
       }
     }
     await page.mouse.up();
