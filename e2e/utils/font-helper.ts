@@ -10,10 +10,23 @@ export const fontHelper = async (page: Page) => {
 
       *:not([class*="icon"]):not(i):not(svg) {
         font-family: Inter !important;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+        font-synthesis: none !important;
+        text-size-adjust: 100% !important;
         
-        /* Opcional: Forzar renderizado consistente */
-        text-rendering: optimizeSpeed !important;
-        -webkit-font-smoothing: subpixel-antialiased !important;
+        /* Fuerza métricas consistentes */
+        font-feature-settings: 'liga' off, 'clig' off, 'kern' off !important;
+        font-kerning: none !important;
+        font-variant-ligatures: none !important;
+      }
+
+      /* Reset para navegadores específicos */
+      @media (-webkit-min-device-pixel-ratio:0) {
+        * {
+          font-smooth: never !important;
+        }
       }
     `;
 

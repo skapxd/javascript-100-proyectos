@@ -63,4 +63,6 @@ test("01-tinder-swipe", async ({ page }) => {
   });
 
   await expect(page).toHaveScreenshot();
+
+  await page.close()
 });
