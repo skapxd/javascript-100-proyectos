@@ -1,0 +1,25 @@
+{
+  "name": "javascript-100-proyectos",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">     <a href=\"https://www.javascript100.dev\">     <img src=\"./web/public/readme.jpg\" />      </a>   <h3>     <strong>100 proyectos de JavaScript con código y vídeos</strong>   </h3> </div>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx servor .",
+    "test": "playwright test",
+    "test:u": "cross-env CI=3 playwright test --update-snapshots",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.x.x"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.50.0",
+    "@types/node": "22.10.10",
+    "cross-env": "7.0.3",
+    "husky": "9.1.7",
+    "servor": "4.0.2"
+  }
+}
