@@ -15,7 +15,7 @@ export const fontHelper = async (page: Page) => {
         -moz-osx-font-smoothing: grayscale !important;
         font-synthesis: none !important;
         text-size-adjust: 100% !important;
-        
+
         /* Fuerza métricas consistentes */
         font-feature-settings: 'liga' off, 'clig' off, 'kern' off !important;
         font-kerning: none !important;
