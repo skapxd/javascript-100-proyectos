@@ -34,7 +34,23 @@ const snapshotPathTemplate = (() => {
  */
 export default defineConfig({
   testDir: "./e2e",
+  expect: {
+    // Configuración global para toHaveScreenshot()
+    toHaveScreenshot: {
+      // Tolerancia máxima de diferencia (en píxeles)
+      // maxDiffPixels: 50, // Aumenta según necesidad
 
+      // Porcentaje de diferencia permitido (0.01 = 1%)
+      maxDiffPixelRatio: 0.01,
+
+      // Umbral de diferencia por píxel (0-1)
+      threshold: 0.2,
+
+      // Animaciones/transiciones a esperar
+      // animations: 'disabled',
+      // transitions: 'disabled'
+    }
+  },
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
