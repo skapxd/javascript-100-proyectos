@@ -1,9 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { mouseHelper } from "../utils/mouse-helper";
-import { fontHelper } from "../utils/font-helper";
 
 test("01-tinder-swipe", async ({ page }) => {
-  await fontHelper(page);
   await mouseHelper(page);
 
   await page.goto("./01-tinder-swipe/index.html");
