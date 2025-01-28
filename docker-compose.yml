@@ -11,7 +11,7 @@ services:
     environment:
       - HEADLESS=true
       - CI=true
-      - NODE_OPTIONS=--max-old-space-size=8192  # <-- Añade esta línea
+      # - NODE_OPTIONS=--max-old-space-size=8192  # <-- Añade esta línea
     # Para depuración con VNC (opcional):
     # ports:
     #   - "5900:5900"  # VNC
