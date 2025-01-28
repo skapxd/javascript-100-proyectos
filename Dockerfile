@@ -10,6 +10,6 @@ RUN yarn
 COPY . .
 
 # Instala browsers y dependencias del sistema
-RUN npx playwright install --with-deps chromium firefox webkit
+# RUN npx playwright install --with-deps chromium firefox webkit
 
 CMD ["yarn", "test:u"]
