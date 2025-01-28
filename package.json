@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx servor .",
     "test": "playwright test",
-    "test:u": "cross-env CI=3 playwright test --update-snapshots",
+    "test:u": "cross-env CI=3 playwright test --update-snapshots --workers=1",
     "prepare": "husky"
   },
   "keywords": [],

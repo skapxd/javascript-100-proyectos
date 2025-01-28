@@ -11,7 +11,7 @@ services:
     environment:
       - HEADLESS=true
       - CI=true
-      - NODE_OPTIONS=--max-old-space-size=4096  # <-- Añade esta línea
+      - NODE_OPTIONS=--max-old-space-size=8192  # <-- Añade esta línea
     # Para depuración con VNC (opcional):
     # ports:
     #   - "5900:5900"  # VNC
@@ -23,3 +23,7 @@ services:
     #   retries: 5
     # restart: "no"
     command: ["yarn", "test:u"]
+    deploy:  # Solo para Docker >= 19.03
+      resources:
+        limits:
+          memory: 8G  # 8GB para el contenedor
