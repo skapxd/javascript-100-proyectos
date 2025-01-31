@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx servor .",
     "test": "playwright test",
-    "test:u": "cross-env CI=3 playwright test --update-snapshots --workers=1",
+    "test:update": "docker compose -f 'docker-compose-update-snapshot.yml' up  --build",
+    "test:compare": "docker compose -f 'docker-compose-compare-snapshot.yml' up  --build",
     "prepare": "husky"
   },
   "keywords": [],

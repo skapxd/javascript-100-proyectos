@@ -34,6 +34,7 @@ const snapshotPathTemplate = (() => {
  */
 export default defineConfig({
   testDir: "./e2e",
+  timeout: 60 * 1000, // 60 seg
   expect: {
     // Configuración global para toHaveScreenshot()
     toHaveScreenshot: {

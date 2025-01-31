@@ -22,7 +22,8 @@ services:
     #   timeout: 5s
     #   retries: 5
     # restart: "no"
-    command: ["yarn", "test:u"]
+    # command: ["yarn", "test"]
+    command: ["npx", "playwright", "test"]
     deploy:  # Solo para Docker >= 19.03
       resources:
         limits:
