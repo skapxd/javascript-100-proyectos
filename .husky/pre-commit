@@ -1,2 +1,2 @@
-# npx kill-port 8080
-# yarn test:update
+npx kill-port 8080
+yarn test:compare
