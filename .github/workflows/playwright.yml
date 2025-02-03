@@ -27,10 +27,8 @@ jobs:
         files: playwright-report
         dest: playwright-report.zip
 
-    - name: List all files
-      run: ls -a
-
     - name: Send Playwright Report to Web
+      if: ${{ always() }}
       run: | 
         curl -X 'POST' \
         'https://test-result-view.skapxd.dev/view' \
