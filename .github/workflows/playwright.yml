@@ -22,6 +22,14 @@ jobs:
     - name: Run Playwright tests
       run: yarn test:compare
 
+    - uses: vimtor/action-zip@v1.2
+      with:
+        files: playwright-report
+        dest: playwright-report.zip
+
+    - name: List all files
+      run: ls -a
+
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
