@@ -30,6 +30,14 @@ jobs:
     - name: List all files
       run: ls -a
 
+    - name: Send Playwright Report to Web
+      run: | 
+        curl -X 'POST' \
+        'https://test-result-view.skapxd.dev/view' \
+        -H 'accept: */*' \
+        -H 'Content-Type: multipart/form-data' \
+        -F 'file=@playwright-report.zip;type=application/zip'
+
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
